@@ -1,0 +1,18 @@
+services:
+  flaskapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '5000:5000'
+    volumes:
+      - .:/app  # แมพไดเร็กทอรีปัจจุบันไปยัง /app ใน container
+    environment:
+      - FLASK_ENV=development  # ตั้งค่าให้รันในโหมดพัฒนา
+    container_name: employee_capital_backend  # ตั้งชื่อให้กับ container
+    networks:
+      - app-network  # เชื่อมกับเครือข่าย app-network
+
+networks:
+  app-network:
+    external: true  # ใช้เครือข่ายภายนอก
