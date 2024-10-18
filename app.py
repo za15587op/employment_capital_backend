@@ -6,7 +6,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app, resources={
     r"/*": {
-        "origins": ["https://employment-capital.vercel.app", "http://localhost:3000"]
+        "origins": ["https://employment-capital.vercel.app", "http://localhost:3000" , "http://10.120.1.109:5000" , "http://10.120.1.109:11150"]
     }
 })  # Enable CORS for Vercel and localhost
 
